@@ -1,6 +1,8 @@
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css">
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
@@ -8,12 +10,33 @@
 
         <div class="content">
 
-            <form id="add-cafe-form"></form>
+            <form id="add-cafe-form">
+                <input type="text" name="name" placeholder="Cafe Name">
+                <input type="text" name="city" placeholder="Cafe City">
+                <button>Add Cafe</button>
+            </form>
 
             <ul id="cafe-list"></ul>
 
         </div>
 
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB3S91Xe34tu-9zC1zk466717Jom-Gjwqg",
+            authDomain: "firestore-tut-ff62e.firebaseapp.com",
+            databaseURL: "https://firestore-tut-ff62e.firebaseio.com",
+            projectId: "firestore-tut-ff62e",
+            storageBucket: "firestore-tut-ff62e.appspot.com",
+            messagingSenderId: "31118586996",
+            appId: "1:31118586996:web:7bfefd2e84bb478239cd21",
+            measurementId: "G-B7RWYFQD1F"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        </script>
         <script src="app.js"></script>
     </body>
 </html>
